@@ -14,11 +14,11 @@ Oracle jdbc writer plugin of Taobao DataX
  ```xml
  	<plugin>
 		<version>1</version>
-		<name>ojdbcwriter</name>
+		<name>oraclejdbcwriter</name>
 		<type>writer</type>
 		<target>oracle</target>
-		<jar>ojdbcwriter-1.0.0.jar</jar>
-		<class>com.taobao.datax.plugins.writer.ojdbcwriter.OracleJdbcWriter</class>
+		<jar>oraclejdbcwriter-1.0.0.jar</jar>
+		<class>com.taobao.datax.plugins.writer.oraclejdbcwriter.OracleJdbcWriter</class>
 		<maxthreadnum>40</maxthreadnum>
 	</plugin>
  ```
