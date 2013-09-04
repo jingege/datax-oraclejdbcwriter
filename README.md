@@ -10,6 +10,7 @@ Oracle jdbc writer plugin of Taobao DataX
  * 下载datax，`svn co http://code.taobao.org/svn/datax`
  * 下载本项目源码，并将插件源码放入对应的源码包里
  * 修改conf/plugins.xml，插入oraclejdbcwriter的配置
+
  ```xml
  	<plugin>
 		<version>1</version>
@@ -21,7 +22,9 @@ Oracle jdbc writer plugin of Taobao DataX
 		<maxthreadnum>40</maxthreadnum>
 	</plugin>
  ```
+
  * 修改build.xml，新增ojdbcwriter target
+
  ```xml
  	<target name="oraclejdbcwriter" depends="clean,compile">
 		<foreach target="eachplugindist" param="var">
@@ -31,8 +34,11 @@ Oracle jdbc writer plugin of Taobao DataX
 		</foreach>
 	</target>	
  ```
- * 修改build.xml，在plugindist target里新增一行
+ 
+* 修改build.xml，在plugindist target里新增一行
+
  ```xml
  	<pathelement path="${classes.dir}/com/taobao/datax/plugins/writer/oraclejdbcwriter/1.0.0" />
  ```
- * 参照datax的文档打包，writer选择是选择oraclejdbcwriter即可。
+ 
+* 参照datax的文档打包，writer选择是选择oraclejdbcwriter即可。
