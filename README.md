@@ -23,5 +23,16 @@ Oracle jdbc writer plugin of Taobao DataX
  ```
  * 修改build.xml，新增ojdbcwriter target
  ```xml
- 
+ 	<target name="oraclejdbcwriter" depends="clean,compile">
+		<foreach target="eachplugindist" param="var">
+			<path id="plugins">
+				<pathelement path="${classes.dir}/com/taobao/datax/plugins/writer/oraclejdbcwriter/1.0.0" />
+			</path>
+		</foreach>
+	</target>	
  ```
+ * 修改build.xml，在plugindist target里新增一行
+ ```xml
+ 	<pathelement path="${classes.dir}/com/taobao/datax/plugins/writer/oraclejdbcwriter/1.0.0" />
+ ```
+ * 参照datax的文档打包，writer选择是选择oraclejdbcwriter即可。
