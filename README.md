@@ -42,3 +42,14 @@ Oracle jdbc writer plugin of Taobao DataX
  ```
  
 * 参照datax的文档打包，writer选择是选择oraclejdbcwriter即可。
+
+###说明
+* dtfmt选项用以处理oracle Date类型的格式化
+* 插入数据时优先使用insert配置
+* 未配置insert时，程序根据oracle列属性拼接insert
+* 未配置insert，且oracle列属性和数据源不一致时，按数据源的列顺序配置colorder
+* limit表示可以容忍的最多的插入错误行
+* commitCount表示一批commit的insert行数
+* duplicatedThreshold表示主键冲突的行数阀值，高于此值暂停导入，转而处理冲突数据
+* onDuplicatedSql表示当发生主键冲突时如何解决
+* duplicatedKeyIndices向onDuplicatedSql传参
